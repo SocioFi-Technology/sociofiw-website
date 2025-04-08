@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/b11b009e-61c1-489a-b4d9-b553dc1017d1/resourceGroups/sociofi-website/providers/Microsoft.Web/sites/sociofi-website",
+    "appService.deploySubpath": "."
+}
