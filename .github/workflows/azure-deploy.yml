@@ -1,41 +1,43 @@
-name: Deploy to Azure Web App
+name: Azure Web App Deployment
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: sociofi-website    # Replace with your app name
-  AZURE_WEBAPP_PACKAGE_PATH: '.'
-  NODE_VERSION: '20.x'
+  NODE_VERSION: '22.x'
+  AZURE_WEBAPP_NAME: sociofi-website  # Change this to your app name
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
         node-version: ${{ env.NODE_VERSION }}
-        cache: 'pnpm'
-
-    - name: Install PNPM
-      run: npm install -g pnpm
-
+        cache: 'npm'
+        
     - name: Install dependencies
-      run: pnpm install
-
-    - name: Build
-      run: pnpm build
-
+      run: npm ci
+      
+    - name: Build application
+      run: npm run build
+      env:
+        # Add your environment variables here
+        NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+        
+    - name: Test application
+      run: npm test
+      if: false  # Remove this line if you have tests
+      
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }} 
+        package: .
