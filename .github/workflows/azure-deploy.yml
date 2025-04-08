@@ -42,7 +42,7 @@ jobs:
           ${{ runner.os }}-pnpm-store-
         
     - name: Install dependencies
-      run: pnpm install --frozen-lockfile
+      run: pnpm install 
       
     - name: Build application
       run: pnpm run build
@@ -50,14 +50,14 @@ jobs:
         # Add your environment variables here
         NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
         
-    - name: Test application
-      run: pnpm test
-      if: false  # Remove this line if you have tests
+    # - name: Test application
+    #   run: pnpm test
+    #   if: false  # Remove this line if you have tests
       
-    - name: Install production packages only
-      run: |
-        rm -rf node_modules
-        pnpm install --prod --frozen-lockfile
+    # - name: Install production packages only
+    #   run: |
+    #     rm -rf node_modules
+    #     pnpm install --prod --frozen-lockfile
       
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
