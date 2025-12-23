@@ -1,6 +1,5 @@
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
 
 const ClientsSection = () => {
   // Placeholder client logos
@@ -11,24 +10,6 @@ const ClientsSection = () => {
     { name: "Client 4", logo: "/placeholder.svg?height=80&width=160" },
     { name: "Client 5", logo: "/placeholder.svg?height=80&width=160" },
     { name: "Client 6", logo: "/placeholder.svg?height=80&width=160" },
-  ]
-
-  // Placeholder testimonials
-  const testimonials = [
-    {
-      quote:
-        "SocioFi's AI solutions have transformed our garment manufacturing process, increasing efficiency by 30% and reducing operational costs.",
-      author: "Rahim Ahmed",
-      position: "CEO, Bangladesh Garments Ltd.",
-      company: "Bangladesh Garments Ltd.",
-    },
-    {
-      quote:
-        "The customized AI agent developed by SocioFi has revolutionized how we analyze data and make decisions. A true game-changer for our business.",
-      author: "Fatima Khan",
-      position: "CTO, AgriTech Solutions",
-      company: "AgriTech Solutions",
-    },
   ]
 
   return (
@@ -45,7 +26,7 @@ const ClientsSection = () => {
         </div>
 
         {/* Client Logos */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
           {clients.map((client, index) => (
             <div key={index} className="flex justify-center">
               <Image
@@ -56,36 +37,6 @@ const ClientsSection = () => {
                 className="opacity-70 hover:opacity-100 transition-opacity"
               />
             </div>
-          ))}
-        </div>
-
-        {/* Testimonials */}
-        <div className="text-center mb-12">
-          <Badge className="mb-4 bg-secondary-gold/10 text-secondary-gold hover:bg-secondary-gold/20 border-none">
-            Testimonials
-          </Badge>
-          <h2 className="text-3xl font-bold mb-4 text-neutral-darkgrey">What Our Clients Say</h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="border-none shadow-md">
-              <CardContent className="p-8">
-                <div className="text-4xl text-primary-teal mb-4">"</div>
-                <p className="text-lg mb-6 text-gray-700 italic">{testimonial.quote}</p>
-                <div className="flex items-center">
-                  <div className="bg-primary-teal/10 h-12 w-12 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-primary-teal font-bold">{testimonial.author.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-neutral-darkgrey">{testimonial.author}</h4>
-                    <p className="text-gray-600">
-                      {testimonial.position}, {testimonial.company}
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           ))}
         </div>
       </div>
