@@ -42,8 +42,8 @@ const ContactInfo = () => {
             </div>
             <div>
               <h3 className="font-semibold text-neutral-darkgrey mb-1">Email</h3>
-              <a href="mailto:info@sociofitech.com" className="text-primary-teal hover:underline">
-                info@sociofitech.com
+              <a href="mailto:info@sociofitechnology.com" className="text-primary-teal hover:underline">
+                info@sociofitechnology.com
               </a>
             </div>
           </motion.div>
@@ -54,8 +54,8 @@ const ContactInfo = () => {
             </div>
             <div>
               <h3 className="font-semibold text-neutral-darkgrey mb-1">Phone</h3>
-              <a href="tel:+8801234567890" className="text-primary-teal hover:underline">
-                +880 123 456 7890
+              <a href="tel:+8801743036425" className="text-primary-teal hover:underline">
+                +880 174 303 6425
               </a>
             </div>
           </motion.div>
@@ -67,7 +67,7 @@ const ContactInfo = () => {
             <div>
               <h3 className="font-semibold text-neutral-darkgrey mb-1">Address</h3>
               <p className="text-gray-700">
-                123 Innovation Street
+                21 Jigatola
                 <br />
                 Dhaka, 1212
                 <br />
