@@ -90,12 +90,12 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="mr-2 h-5 w-5 text-primary-keppel shrink-0 mt-0.5" />
-                <span className="text-gray-300">123 Innovation Street, Dhaka, Bangladesh</span>
+                <span className="text-gray-300">21 Jigatola, Dhaka, Bangladesh</span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-2 h-5 w-5 text-primary-keppel" />
-                <a href="tel:+8801234567890" className="text-gray-300 hover:text-white transition-colors">
-                  +880 123 456 7890
+                <a href="tel:+8801743036425" className="text-gray-300 hover:text-white transition-colors">
+                  +880 174 303 6425
                 </a>
               </li>
               <li className="flex items-center">
